@@ -1,0 +1,26 @@
+name: Bug report / 问题反馈
+description: 菜单栏、网页读取或设置问题
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: 请勿提交账号、Cookie、Token、私人网址或订阅链接。截图只保留 NexQuota 界面。
+  - type: textarea
+    id: environment
+    attributes:
+      label: 运行环境
+      description: macOS 版本、芯片类型、NexQuota 版本；多屏问题请说明屏幕排列。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      description: 操作了什么、实际出现什么、期望发生什么。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 脱敏证据
+      description: 可选；裁切后的 App 截图或使用虚构数字的页面样本。

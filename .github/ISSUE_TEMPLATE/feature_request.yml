@@ -1,0 +1,18 @@
+name: Feature request / 功能建议
+description: 说明要解决的使用问题
+title: "[Feature] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 希望解决什么问题
+      description: 请描述具体的使用场景，不要附私人账户链接。
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: 期望的行为
+      description: 希望在界面上看到什么或减少什么操作？
+    validations:
+      required: true

@@ -1,0 +1,31 @@
+# Local account configuration and build products
+Config.local.plist
+.build/
+*.app/
+*.build/
+*.dSYM/
+*.zip
+*.dmg
+
+# OS/editor state
+.DS_Store
+.AppleDouble/
+.vscode/
+.idea/
+*.swp
+
+# Local secrets, screenshots and logs
+.env
+.env.*
+!.env.example
+*.p12
+*.p8
+*.mobileprovision
+*.key
+*.pem
+*.log
+Screenshots.private/
+
+# Documentation development dependencies
+Scripts/node_modules/
+__pycache__/

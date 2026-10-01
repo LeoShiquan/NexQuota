@@ -1,0 +1,24 @@
+name: Build and test
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native:
+    runs-on: macos-26
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Create synthetic configuration
+        run: cp Config.example.plist Config.local.plist
+      - name: Build
+        run: ./build.sh
+      - name: Test
+        run: ./test.sh
+      - name: Check public files
+        run: python3 Scripts/check-public-files.py
