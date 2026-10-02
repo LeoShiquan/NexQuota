@@ -110,7 +110,7 @@ struct SettingsView: View {
             Form {
                 Picker("菜单栏显示", selection: $state.mode) { ForEach(DisplayMode.allCases) { mode in Text(mode.label).tag(mode) } }
                 Picker("自动刷新", selection: $state.interval) { ForEach([1,5,15,30], id: \.self) { minutes in Text("每 \(minutes) 分钟").tag(minutes * 60) } }
-                Toggle("登录 Mac 时启动", isOn: Binding(get: { state.loginItem }, set: setLoginItem))
+                Toggle("登录 Mac 时启动", isOn: Binding(get: { state.loginItem }, set: { enabled in setLoginItem(enabled) }))
             }
             if let error = state.loginItemError { Text(error).font(.caption).foregroundStyle(.orange).fixedSize(horizontal: false, vertical: true) }
             Divider()
